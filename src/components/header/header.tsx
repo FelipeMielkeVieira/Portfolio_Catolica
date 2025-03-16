@@ -1,31 +1,33 @@
-"use client";
-
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Header() {
 
-  const router = useRouter();
-
-  const NavegarPagina = (paginaURL: string) => {
-    router.push(paginaURL);
-  }
-
   return (
-    <div className="w-full h-20 p-3 flex items-center justify-between bg-[#443627]">
-      <h1 className="text-3xl ml-6 font-bold text-[#F2F6D0]">Portfólio de Projetos</h1>
+    <div className="w-full h-14 p-3 flex items-center justify-between bg-[#443627]">
+      <h1 className="text-2xl ml-6 font-bold text-[#F2F6D0]">Portfólio de Projetos</h1>
 
-      <div className="w-100 h-full flex items-center justify-evenly">
+      <div className="w-80 h-full flex items-center justify-evenly">
 
-        <Image title="Página Inicial" className="cursor-pointer" src="/home.png" onClick={() => {NavegarPagina("/")}} width={40} height={40} alt="Home" />
+        <Link href={"/"}>
+          <Image title="Página Inicial" className="cursor-pointer" src="/home.png" width={32} height={32} alt="Home" />
+        </Link>
 
-        <Image title="Sobre" className="cursor-pointer" src="/user.png" onClick={() => {NavegarPagina("/about")}} width={40} height={40} alt="User" />
+        <Link href={"/about"}>
+          <Image title="Sobre" className="cursor-pointer" src="/user.png" width={32} height={32} alt="User" />
+        </Link>
 
-        <Image title="Habilidades" className="cursor-pointer" src="/idea.png" onClick={() => {NavegarPagina("/habilities")}} width={40} height={40} alt="Habilidades" />
+        <Link href={"/habilities"}>
+          <Image title="Habilidades" className="cursor-pointer" src="/idea.png" width={32} height={32} alt="Habilidades" />
+        </Link>
 
-        <Image title="Projetos" className="cursor-pointer" src="/coding.png" onClick={() => {NavegarPagina("/projects")}} width={40} height={40} alt="Projetos" />
+        <Link href={"/projects"}>
+          <Image title="Projetos" className="cursor-pointer" src="/coding.png" width={32} height={32} alt="Projetos" />
+        </Link>
 
-        <Image title="Contato" className="cursor-pointer" src="/phone.png" onClick={() => {NavegarPagina("/contact")}} width={40} height={40} alt="Contato" />
+        <Link href={"/contact"}>
+          <Image title="Contato" className="cursor-pointer" src="/phone.png" width={32} height={32} alt="Contato" />
+        </Link>
       </div>
     </div>
   );
