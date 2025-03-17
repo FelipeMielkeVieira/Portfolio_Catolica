@@ -34,6 +34,11 @@ export default function Home() {
                   Sobre Mim
                 </button>
               </Link>
+              <Link href={"/contact"}>
+                <button className="mt-6 w-1/2 h-8 bg-[#443627] cursor-pointer" title="Contato">
+                  Contato
+                </button>
+              </Link>
             </div>
 
             <Image src="/programming.png" width={200} height={200} alt="Programação" />
